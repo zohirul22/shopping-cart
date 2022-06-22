@@ -1,5 +1,5 @@
-function inputValue(isIncreasing) {
-    const phoneInput = document.getElementById("phone_input");
+function inputValue(product,price,isIncreasing) {
+    const phoneInput = document.getElementById(product + "_input");
     let phoneValue = phoneInput.value;
 
     if(isIncreasing){
@@ -9,23 +9,28 @@ function inputValue(isIncreasing) {
     }
     phoneInput.value = phoneValue;
 
-    const phonePrice = document.getElementById("phone_price");
-     phonePrice.innerText = phoneValue * 1200;
+    const phonePrice = document.getElementById(product + "_price");
+     phonePrice.innerText = phoneValue * price;
   
-   
 }
 
 document.getElementById("phone_plus_btn").addEventListener("click" ,function(){
-    // console.log("shahin")
-    // const phoneInput = document.getElementById("phone_input");
-    // const phoneValue = phoneInput.value;
-    // phoneInput.value = parseInt(phoneValue) + 1;
-    inputValue(true)
+  
+    inputValue("phone",1200 ,true)
 })
 
 document.getElementById('phone_minus_btn').addEventListener("click" ,function(){
-//   const phoneInput = document.getElementById("phone_input")
-//   const phoneValue = phoneInput.value;
-//   phoneInput.value = parseInt(phoneValue) - 1;
-inputValue(false)
+
+inputValue("phone",1200 ,false)
 })
+
+document.getElementById("case_plus_btn").addEventListener("click" ,function(){
+    inputValue("case",59 ,true)
+})
+
+document.getElementById("case_minus_btn").addEventListener("click" ,function(){
+    inputValue("case", 59,false)
+})
+
+
+
